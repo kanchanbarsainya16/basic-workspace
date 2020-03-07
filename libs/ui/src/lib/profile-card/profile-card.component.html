@@ -4,7 +4,7 @@
     <ng-template #noUserImage>
       <img mat-card-avatar src="/assets/filler-img.jpg ">
     </ng-template>
-    <mat-card-title>{{ user.firstName || 'John' }}  {{ user.lastName || 'Doe' }}</mat-card-title>
+    <mat-card-title>{{ user?.firstName  }}  {{ user?.lastName  }}</mat-card-title>
     <mat-card-subtitle>New Scorpion Hire</mat-card-subtitle>
   </mat-card-header>
   <br/>
@@ -12,14 +12,14 @@
   <br/>
   <mat-card-content>
     <span class="mat-body-strong">EMAIL:</span>
-    <p>{{ user.email || 'jdoe@example.com' }}</p>
+    <p>{{ user?.email  }}</p>
     <span class="mat-body-strong">PHONE:</span>
-    <p>{{ user.phone || '(xxx) xxx = xxxx'}}</p>
+    <p>{{ user?.phone || '(xxx) xxx = xxxx'}}</p>
     <span class="mat-body-strong">CELL PHONE:</span>
-    <p>{{ user.cell || '(xxx) xxx = xxxx'}}</p>
+    <p>{{ user?.cell || '(xxx) xxx = xxxx'}}</p>
     <span class="mat-body-strong">CITY/STATE:</span>
     <p>
-      {{ user.city || 'Santa Clarita' }}, {{ user.state || 'CA' }}
+      {{ user?.city  }}, {{ user?.state }}
     </p>
   </mat-card-content>
 </mat-card>
