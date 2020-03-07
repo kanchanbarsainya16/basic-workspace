@@ -3,7 +3,7 @@
   <!-- Picture Url Column -->
   <ng-container matColumnDef="pictureUrl">
     <th mat-header-cell *matHeaderCellDef> Picture </th>
-    <td mat-cell *matCellDef="let element"> <img class="circle" src="{{ element.pictureUrl }}" /> </td>
+    <td mat-cell *matCellDef="let element"> <img class="circle" src="{{element.pictureUrl }}" /> </td>
   </ng-container>
 
   <!-- Name Column -->
@@ -19,5 +19,5 @@
     </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr (click)="goToProfile()" mat-row *matRowDef="let row; let i = index; columns: displayedColumns;"></tr>
+  <tr (click)="goToProfile(i)" mat-row *matRowDef="let row; let i = index; columns: displayedColumns;"></tr>
 </table>
