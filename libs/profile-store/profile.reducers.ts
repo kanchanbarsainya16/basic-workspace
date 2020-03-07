@@ -6,14 +6,24 @@ export const initialState: ProfileState = {
     userProfile: null
 }
 
-const scoreboardReducer = createReducer(
+const randomUser = createReducer(
     initialState,
-    on(ProfileActions.getProfile, state => { 
+    on(ProfileActions.getRamdomUser, state => {
         // Write code here
         return { ...state }
+    }),
+    on(ProfileActions.successGetRandomUser, (state: ProfileState, { payload }) => {
+      // Write code here
+      console.log(payload)
+      return { ...state, userProfile: payload }
+    }),
+    on(ProfileActions.setSeLectedUserProfileDetail, (state: ProfileState, { payload }) => {
+      // Write code here
+      console.log(payload)
+      return { ...state, userProfile: payload }
     })
   );
 
-  export function reducer(state: ProfileState | undefined, action: Action) {
-    return scoreboardReducer(state, action);
+  export function RandomUserReducer(state: ProfileState | undefined, action: Action) {
+    return randomUser(state, action);
   }
